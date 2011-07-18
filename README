@@ -1,0 +1,39 @@
+
+
+
+2D FDTD examples
+
+1 bezhig
+
+	Basic 2D FDTD
+
+2 niizh
+
+	Variation in array memory allocation, from a contiguous array
+	to split allocation.  Compare speed.  Smaller allocations may
+	show little difference as the entire system may fit within
+	cache or the I/O may limit the speed, for example.  Try
+	increasing the simulation size, or reducing the requested I/O.
+
+3 niswi
+4 niiwin
+5 naanan
+
+	Illustrates a higher order stencil outlined by Lan, Liu, and
+	Lin in "A Higher Order (2,4) Scheme for Reducing Dispersion in FDTD
+	Algorithm", IEEE Transactions on Electromagnetic Compatibility, volume
+	41, number 2, May 1999.  Compare the results from naanan to the basic
+	ToyPlaneFDTD. What was gained and what was lost by this
+	modification?
+
+6 ningodwaaswi
+7 niizhwaaswi
+8 nishwaaswi
+9 zhaangaswi
+
+
+
+
+
+
+

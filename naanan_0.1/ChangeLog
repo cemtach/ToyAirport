@@ -1,0 +1,100 @@
+1999-08-21  Paul Robert Hayes  <info@cemtach.com>
+
+	* Cut a 0.1 version to place on the website so Liu or the other
+	authors could gain easy access to it.
+
+	* Added in the equations from the paper "A Higher Order (2,4)
+	Scheme for Reducing Dispersion in FDTD Algorithm", IEEE
+	Transactions on Electromagnetic Compatability, vol 41, no 2, may
+	1999.  There appear to be flaws in the printed version, sent an
+	email to Yaowu Liu at eeliuy@cityu.edu.hk.  Hopefully he can
+	clarify the equations.
+
+1999-08-20  Paul Robert Hayes  <info@cemtach.com>
+
+	* Ripped from 0.3 ToyPlane code, this will become an Airport code
+	based off the Lan, Liu, Lin, Higher Order FDTD stencil.  I'll keep
+	the ChangeLog here so it can maintain a bit of history.
+
+1999-08-17  Paul Robert Hayes  <info@cemtach.com>
+
+	* Added help comments in Makefile to clarify `make clean' and
+	`make cleandata'.
+
+	* Added the `experiment' example code into the code, but commented
+	out.  The user need only uncomment the section and recompile.
+	
+	* Verified that `as-configured' simulation runs and pnm/mtv output
+	are viewable.
+
+	* Upgraded web page to include more documentation and the movies
+	that JD Harrington made.  Aha, proof that someone besides me can
+	download and run the code. 8)
+
+	* Ripped both modulo type output routines out of the main() code
+	and placed the in moduloOutput().  This makes main() easier to
+	read and should simplify maintenance on the identical code.  The
+	single point output code will remain in main() as it is about the
+	same size either way and would not lend the code to be any more
+	readable.
+
+	* Created ToyPlaneFDTD. to contain commonly defined information
+	and facilitate breakout of output routines into output.c
+
+1999-08-08  Paul Robert Hayes  <info@cemtach.com>
+
+	* Makefile removing incorrect viz file, old naming convention
+
+	* Commented Schneider, Flynn, Shlager code to clarify where it
+	comes from.
+
+	* Making the testc should remove all previous data.  Made it
+	depend on cleandata which would clear all old bob files, etc
+	leaving a clean slate for the new data to be produced.
+
+1999-08-04  Paul Robert Hayes  <info@cemtach.com>
+
+	* Decided against any ABC (Mur 1st order, Mur 2nd order, et
+	cetera) in this version which would map the ABC's into a
+	ToyAirport Code to be consistent with the 3D Toy codes.  This will
+	limit utility of the code and yet should enhance readability on
+	this base version against which the ToyAirport codes are to be
+	built.
+
+	* Changed problem to simple propagation and scattering.  Waveguide
+	resonance example was looking a bit esoteric in this code.
+
+1999-08-03  Paul Robert Hayes  <info@cemtach.com>
+
+	* Tweaked the problem section to work a waveguide resonance
+	system.  This allows the code to remain with PEC outer boundaries
+	as an example code.
+
+1999-08-02  Paul Robert Hayes  <info@cemtach.com>
+
+	* Performed a few checks of the PNM and MTV output formats for
+	each of the #define options.  Certainly not rigorous, but it
+	should work for you.
+
+	* Easily the kernel calculations have been almost lost within the
+	output routines and basic maintenance.  Thus, the `care and
+	feeding' of the time-domain local-operator kernsls is the
+	overwhelming burden even in a 2D code.
+
+	* PNM output always autoscales now.  Look at the runLog
+	information for the actual values of the scaling
+
+	* Even though E_NORMAL or H_NORMAL are selected, one might still
+	want to output the fields within the plane.  Options to output
+	those fields added.  This is thoroughly messy, yet remains less
+	messy when compared to parsing code for user or file input.
+	
+	* Added boiler plate, GPL, and other assorted header comments
+	describing the code.
+
+	* Added more precision to the constants which should alleviate any
+	roundoff flaws or differences between machine files.  It's a bit
+	of overkill, but it should lend consistency to the various
+	machines that people run with.
+
+	

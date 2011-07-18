@@ -1,0 +1,92 @@
+
+
+This code is originally based off ToyPlaneFDTD-0.3 and implements the
+stencil outlined in
+
+"Kang, Lan, Yaowu, Weigan Lin, "A Higher Order (2,4) Scheme for
+Reducing Dispersion in FDTD Algorithm", IEEE Transactions on
+Electromagnetic Compatability, vol 41, no 2, may 1999
+
+
+
+
+
+
+
+I refer to xfdtd several times throughout the code. This may change in
+the future, but for those who do not know what this is, here is part
+of the README file that accompanied that file as a credit to the
+authors of that work.
+
+============================================================================
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+
+Program :       xyfdtd - 2 dimensional Finite-Difference Time Domain demo
+                         program using the Yee algorithm and Mur absorbing
+                         boundary conditions. Uses X-windows to display the
+                         wave propogation. The input file contains all the
+                         input parameter definitions with a sample case.
+
+Author  :       Louis Wilson - Main computational engine
+                Jeff Sheffel - X-windows Graphic Interface
+
+e-mail  :       lwilson@netcom.com
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+============================================================================
+
+
+Please note that ToyPlaneFDTD was not copied or developped in any way
+from the aformentioned code.  I simply refer to it as an example of
+another publically released 2D FDTD source code which the user may or
+may not have encountered before.
+
+
+
+
+
+
+Experiment #1
+===========================================================================
+
+Try changing the spatial delta and the overall physical dimensions.
+Decrease the spatial delta and let the code select the nx and ny.  The
+overall mesh will grow in nx and ny yet should remain modeling the
+same physical dimensions.  Look carefully at the back side of the
+propagating pulse.  What do you see?  Look carefully at the
+propagation and specifically at the back side of the propagating
+pulse.
+
+
+Drop dx and dy to 0.015 or half it's current value and the mesh size
+should increase to 512x512.  The simulation will take a bit longer to
+run since it is now four times as big. The mesh dimensions were
+doubled on each side for (2*256)x(2*256) = 4*(256x256).
+
+You may want to turn off one of MTV or PNM output or change the plot
+modulo as the MTV and PNM files become large very quickly.
+
+Try a third the current spatial delta at 0.01 and 768x768.
+
+To view the images at the same physical size as the original one could
+do the following:
+
+display -geometry 50% *.pnm
+or
+display -geometry 256x256 *.pnm
+
+for the 512x512 simulation.  Display is an image viewing tool from
+ImageMagick and is listed in the software `related software' section.
+
+Experiment #2
+===========================================================================
+
+Try increasing the overall dimensions and leave the spatial delta the
+same.  This will move the outer boundaries farther away from the PEC
+plate and initial excitation and allow study of the plate interactions
+because the outer boundaries have now been moved out far enough to
+avoid interactions until later in the simulation.  Thus, an artificial
+boundary can sometimes be moved away from the area of interaction in
+order to study the problem at hand.
+
+
